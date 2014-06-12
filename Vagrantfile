@@ -1,7 +1,6 @@
-## variables
-LOCAL_SYNCED_FOLDER = ""
-FORWARDED_PORT = "3000"
 
+LOCAL_SYNCED_FOLDER = "~/Documents/"
+FORWARDED_PORT = "3000"
 
 Vagrant.configure("2") do |config|
 
@@ -12,6 +11,8 @@ Vagrant.configure("2") do |config|
 
   #provision with puppet
   config.vm.provision "puppet" do |puppet|
+      puppet.module_path = "manifests/modules"
+
   end
 
   #provide more memory to the box
